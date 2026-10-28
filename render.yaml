@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: spreadpilot-live
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: CACHE_MS
+        value: 5000
+      - key: REQUEST_TIMEOUT_MS
+        value: 8000
